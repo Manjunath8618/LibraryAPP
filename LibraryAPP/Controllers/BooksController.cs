@@ -23,5 +23,15 @@ namespace LibraryAPP.Controllers
             }
             return Ok(books);
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetBookById([FromRoute] int id)
+        {
+            var book = await _books.GetBookByID(id);
+            if (book == null)
+            {
+                return NotFound();
+            }
+            return Ok(book);
+        }
     }
 }

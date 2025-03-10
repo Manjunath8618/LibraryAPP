@@ -20,7 +20,7 @@ namespace LibraryAPP.Repo
             var books = await _context.AllBooks.ToListAsync();
             if(books==null)
             {
-               throw new Exception(" No data found");
+               throw new Exception("No data found");
             }
             return books;
         }
@@ -36,7 +36,7 @@ namespace LibraryAPP.Repo
 
             if(book==null)
             {
-                throw new Exception(" No Todo item found");
+                throw new Exception("Looking for the item is found");
             }
             return book;
         }
