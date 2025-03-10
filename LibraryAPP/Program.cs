@@ -1,6 +1,7 @@
 using LibraryAPP.Data;
 using System.Configuration;
 using Microsoft.EntityFrameworkCore;
+using LibraryAPP.Repo;
 
 
 
@@ -14,6 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<BookDBContext>(
                 options => options.UseSqlServer(builder.Configuration.GetConnectionString("LibraryDB")));
+builder.Services.AddTransient<IBooks,Books>();
 
 var app = builder.Build();
 
