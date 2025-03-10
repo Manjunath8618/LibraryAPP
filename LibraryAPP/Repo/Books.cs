@@ -24,7 +24,7 @@ namespace LibraryAPP.Repo
             }
             return books;
         }
-        public async Task<BookModel> GetBookByID(int id )
+        public async Task<BookModel> GetBookById(int id )
         {
             var book = await _context.AllBooks.Where(x => x.Id == id).Select(x => new BookModel()
             {
